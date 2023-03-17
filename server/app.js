@@ -7,9 +7,11 @@ import eventRoutes from "./routes/events.js";
 import userRoutes from "./routes/users.js";
 import session from "express-session";
 
-// const eventsRoutes = require("./routes/events");
+const env = process.env.NODE_ENV || "DEVELOPMENT";
 
-dotenv.config();
+if (process.env.NODE_ENV !== "PRODUCTION") {
+  dotenv.config();
+}
 
 const app = express();
 
